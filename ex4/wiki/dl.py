@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+
 import re
 import urllib3
 from bs4 import BeautifulSoup
+from time import sleep
 
 def get_content(url):
     http = urllib3.PoolManager()
@@ -41,6 +44,7 @@ if __name__ == '__main__':
         with open(out, mode='w') as f:
 
             f.write(get_content('https://en.wikipedia.org'+name))
+            sleep(0.2)
 
 
         
